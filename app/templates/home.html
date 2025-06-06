@@ -1,0 +1,246 @@
+{%extends 'base.html'%}
+{% load static %}
+{%block content%}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<header>
+    <div class="header position-relative text-white">
+        <img src="https://rare-gallery.com/uploads/posts/1046761-face-drawing-white-black-monochrome-model-portrait-photography-hair-Game-of-Thrones-Emilia-Clarke-emotion-Person-head-Daenerys-Targaryen-girl-beauty-smile-eye-woman-lad.jpg"
+            alt="Photography School" class="img-fluid w-100 header-img logo-animate"
+            style="height: 100vh; object-fit: cover;">
+
+        <div
+            class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center p-3">
+            <h1 class="header-title">Capture the Moment</h1>
+            <p class="header-subtitle">Welcome to our Photography School – where creativity meets skill.</p>
+            <button class="btn btn-custom mt-3">Explore Courses</button>
+        </div>
+    </div>
+</header>
+
+<!-- Intro Images Section -->
+<div class="container-fluid bg-black py-5">
+    <div class="container">
+        <div class="row">
+            <div class="head-img col-12 col-md-6 mb-4 mb-md-0">
+                <img src="https://media.istockphoto.com/id/1335978911/photo/professional-photographer-at-the-studio-african-american-man-wear-black-hoodie-and-sunglasses.jpg?s=612x612&w=0&k=20&c=TOw_kaFbzKWdn6a4TV3DtBe1Cdxygo3fsqn3dG269XI="
+                    alt="Professional Photographer">
+            </div>
+            <div class="head-img col-12 col-md-6">
+                <img src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2024/02/how-to-become-a-good-photographer-106.jpg?fit=1500%2C1000&ssl=1"
+                    alt="Photography Learning">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- About Section -->
+<section class="bg-black" style="padding-top: 100px; padding-bottom: 50px;">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+                <img src="https://121clicks.com/wp-content/uploads/2023/08/photography-tips-beginners-guide-14.jpg"
+                    alt="Photography Studio" class="img-fluid rounded shadow">
+            </div>
+            <div class="col-lg-6 mb-4 mb-lg-0 text-white">
+                <h2 class="display-4 fw-bold mb-4">Master the Art of Photography</h2>
+                <p class="lead mb-4" style="text-align: justify;">Our photography school has been nurturing creative
+                    talents for over a decade. We combine traditional techniques with modern digital innovation to
+                    create well-rounded photographers.</p>
+                <p class="mb-4" style="text-align: justify;">Whether you're a complete beginner or looking to advance
+                    your skills, our comprehensive programs are designed to help you achieve your photographic goals.
+                </p>
+                <a href="{% url 'about' %}"><button class="btn btn-custom">Learn More About Us</button></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Courses Section -->
+<section class="course py-5 ">
+    <div class="container">
+        <h2 class="section-title" style="color: white;">Our Photography Courses</h2>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="card-image-wrapper text-center mb-3">
+                        <img src="https://media.greatbigphotographyworld.com/wp-content/uploads/2022/04/Aesthetic-Photography.jpg"
+                            class="img-fluid rounded">
+                        <h5 class="card-title-overlay">Beginner Photography</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="card-image-wrapper text-center mb-3">
+                        <img src="https://cdn.prod.website-files.com/670e0ce761868ff9e8915a06/675df208edd853f6cb2267c9_671655a6aef2583842eb686e_65f863d2b8a8f574defc26da_Vintage_Aesthetic_Photography_85e845627c_jnyhzg.webp"
+                            class="img-fluid rounded">
+                        <h5 class="card-title-overlay">Portrait Photography</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="course-card">
+                    <div class="card-image-wrapper text-center mb-3">
+                        <img src="https://d1hjkbq40fs2x4.cloudfront.net/2020-04-06/files/INTERESTING-COMPOSITION-TECHNIQUES_LADNSCAPE-B_LR.jpg"
+                            class="img-fluid rounded">
+                        <h5 class="card-title-overlay">Landscape Photography</h5>
+                    </div>
+                </div>
+            </div>
+            <a href="{% url 'service' %}" style="text-decoration: none;">
+                <button class="btn btn-custom d-flex mx-auto">View More</button>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+
+
+<!-- Stats Section -->
+<!-- <section class="py-5 stats-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-3 col-md-3 mb-4">
+                    <div class="stat-number">500+</div>
+                    <h5>Students Graduated</h5>
+                </div>
+                <div class="col-lg-3 col-md-3 mb-4">
+                    <div class="stat-number">15+</div>
+                    <h5>Years of Experience</h5>
+                </div>
+                <div class="col-lg-3 col-md-3 mb-4">
+                    <div class="stat-number">25+</div>
+                    <h5>Expert Instructors</h5>
+                </div>
+                <div class="col-lg-3 col-md-3 mb-4">
+                    <div class="stat-number">98%</div>
+                    <h5>Satisfaction Rate</h5>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+<!-- Instructors Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title">Meet Our Instructors</h2>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        alt="Instructor 1" class="instructor-img mb-3">
+                    <h5>Alex Johnson</h5>
+                    <p class="text-muted">Portrait & Fashion Photography</p>
+                    <p>Award-winning photographer with 12 years of experience in fashion and portrait photography.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        alt="Instructor 2" class="instructor-img mb-3">
+                    <h5>Sarah Martinez</h5>
+                    <p class="text-muted">Landscape & Nature Photography</p>
+                    <p>Nature photographer who has traveled to 50+ countries capturing stunning landscapes.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                        alt="Instructor 3" class="instructor-img mb-3">
+                    <h5>Michael Chen</h5>
+                    <p class="text-muted">Digital Photography & Post-Processing</p>
+                    <p>Technical expert specializing in digital workflows and advanced post-processing techniques.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="container py-5">
+    <h2 class="section-title">What Our Student Says</h2>
+    <div class="row text-center">
+        <div class="col-md-12">
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+
+                        <div class="mt-5 mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
+                                class="rounded-circle img-fluid shadow-1-strong" alt="sample image" width="100"
+                                height="100" />
+                        </div>
+
+                        <p class="lead font-italic mx-4 mx-md-5">
+                            "Lorem ipsum dolor sit amet, consectetur adipisicing elit..."
+                        </p>
+                        <p class="text-muted mb-0">- Anna Morian</p>
+                    </div>
+                    <div class="carousel-item">
+
+                        <div class="mt-5 mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(31).webp"
+                                class="rounded-circle img-fluid shadow-1-strong" alt="sample image" width="100"
+                                height="100" />
+                        </div>
+                        <p class="lead font-italic mx-4 mx-md-5">
+                            "Neque cupiditate assumenda in maiores repudiandae mollitia..."
+                        </p>
+                        <p class="text-muted mb-0">- Teresa May</p>
+                    </div>
+                    <div class="carousel-item">
+
+                        <div class="mt-5 mb-4">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                                class="rounded-circle img-fluid shadow-1-strong" alt="sample image" width="100"
+                                height="100" />
+                        </div>
+                        <p class="lead font-italic mx-4 mx-md-5">
+                            "Duis aute irure dolor in reprehenderit in voluptate..."
+                        </p>
+                        <p class="text-muted mb-0">- Kate Allise</p>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-5" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-5" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Call to Action Section -->
+<section class="py-5 bg-dark text-white">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="display-4 mb-4">Ready to Start Your Photography Journey?</h2>
+                <p class="lead mb-4">Join thousands of students who have transformed their passion into profession.
+                    Enroll today and get access to our comprehensive photography courses.</p>
+                <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+                    <button class="btn btn-custom btn-lg">Enroll Now</button>
+                    <button class="btn btn-outline-light btn-lg">View Course Schedule</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{%endblock%}
