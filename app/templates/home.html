@@ -212,11 +212,11 @@
                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
                         <div class="mt-5 mb-4">
                             {% if testimonial.image %}
-                                <img src="{{ testimonial.image.url }}" class="rounded-2 img-fluid shadow-1-strong"
+                                <img src="{{ testimonial.image.url }}" class="img-fluid shadow-1-strong" style="height: 90px; width: 100px; object-fit: cover; border-radius: 60%;"
                                      alt="{{ testimonial.name }}" width="100" height="100">
                             {% else %}
                                 <img src="{% static 'default-avatar.jpg' %}" class="rounded-circle img-fluid shadow-1-strong"
-                                     alt="default image" width="100" height="100">
+                                     alt="No image" width="100" height="100">
                             {% endif %}
                         </div>
                         <p class="lead font-italic mx-4 mx-md-5">"{{ testimonial.description }}"</p>
