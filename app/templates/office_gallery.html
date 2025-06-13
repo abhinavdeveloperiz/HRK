@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+<title>{% block title %}HRK | Office Gallery{% endblock %}</title>
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<section class="py-5 bg-dark">
+    <div class="container">
+        <h2 class="section-title mt-5 pt-5">Mentors Gallery</h2>
+        <div class="row g-4">
+            {% for i in office %}
+            <div class="col-lg-3 col-md-6">
+                <img src="{{ i.image.url }}" alt="Portrait Photography" class="gallery-img img-fluid" onclick="openModal(this)">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div id="imageModal" class="modal" onclick="closeModal(event)">
+    <span class="close-btn" onclick="closeModal(event)">&times;</span>
+    <img class="modal-image" id="modalImg" alt="Full view">
+</div>
+
+<style>
+    /* Modal base */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        justify-content: center;
+        align-items: center;
+        overflow: auto;
+    }
+
+    /* Modal Image */
+    .modal-image {
+        max-width: 90vw;
+        max-height: 90vh;
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+        object-fit: contain;
+    }
+
+    /* Close Button */
+    .close-btn {
+        position: fixed;
+        top: 20px;
+        right: 30px;
+        font-size: 40px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 10000;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 5px 15px;
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+
+    .close-btn:hover {
+        color: red;
+    }
+</style>
+
+<script>
+    function openModal(img) {
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        modal.style.display = "flex"; // flex for centering
+        modalImg.src = img.src;
+    }
+
+    function closeModal(event) {
+        if (event.target.id === "imageModal" || event.target.classList.contains("close-btn")) {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    }
+</script>
+{% endblock %}

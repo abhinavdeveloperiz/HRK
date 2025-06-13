@@ -1,0 +1,10 @@
+.head-image{
+    width: 100%;
+    height: 50vh;
+}
+.head-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}

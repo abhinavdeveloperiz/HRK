@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}HRK | {{ service.title }}{% endblock %}
+
+{% block content %}
+
+
+<section class="py-5 bg-black mt-5">
+    <div class="container mt-5">
+
+        <!-- Top Section: Image and Content -->
+        <div class="row g-5 align-items-center mb-5">
+            <!-- Image -->
+            <div class="col-md-6">
+                <img src="{{ service.image.url }}" alt="{{ service.title }}" class="img-fluid rounded-3 shadow-white-lg">
+            </div>
+
+            <!-- Title + Description -->
+            <div class="col-md-6">
+                <h2 class="fw-bold text-primary mb-3">{{ service.title }}</h2>
+                <p class="fs-5 text-light" style="text-align: justify;">{{ service.description }}</p>
+            </div>
+        </div>
+
+        <!-- Bottom Section: Details Cards -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+            <div class="col">
+                <div class="d-flex align-items-center bg-white shadow-sm rounded p-4 h-100">
+                    <i class="bi bi-cash-coin fs-3 text-success me-3"></i>
+                    <div>
+                        <div class="small text-muted">Fees</div>
+                        <div class="fw-semibold">₹{{ service.fees }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="d-flex align-items-center bg-white shadow-sm rounded p-4 h-100">
+                    <i class="bi bi-list-columns-reverse fs-3 text-info me-3"></i>
+                    <div>
+                        <div class="small text-muted">Type</div>
+                        <div class="fw-semibold">{{ service.type }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="d-flex align-items-center bg-white shadow-sm rounded p-4 h-100">
+                    <i class="bi bi-clock-history fs-3 text-warning me-3"></i>
+                    <div>
+                        <div class="small text-muted">Duration</div>
+                        <div class="fw-semibold">{{ service.duration }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="d-flex align-items-center bg-white shadow-sm rounded p-4 h-100">
+                    <i class="bi bi-bar-chart-steps fs-3 text-danger me-3"></i>
+                    <div>
+                        <div class="small text-muted">Level</div>
+                        <div class="fw-semibold">{{ service.level }}</div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-5 text-center">
+            <a href="tel:+918075918884" class="btn btn-outline-light px-4 py-2">Contact Now</a>
+          
+        </div>
+
+    </div>
+</section>
+{% endblock %}

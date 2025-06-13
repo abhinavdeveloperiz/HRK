@@ -1,0 +1,242 @@
+{%extends 'base.html'%}
+{% load static %}
+<title>{% block title %}HRK | About{% endblock %}</title>
+{%block content%}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+<section class="hero-section">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 class="hero-title">About Us</h1>
+        <p class="hero-subtitle">Capturing Moments • Creating Stories • Building Careers</p>
+        <p class="hero-description">
+            Professional photography focuses on precision, lighting, and composition to create high-quality images for
+            various purposes.
+            It requires a strong command of technical skills and creative control.
+        </p>
+    </div>
+</section>
+
+<!-- Our Story Section -->
+<section class="section story-section">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Our Story</h2>
+        <div class="story-content animate-on-scroll">
+            <p class="story-text">
+                HRK School of Photography is one of the premier photography institutes in India, located in
+                Thiruvananthapuram, Kerala. We believe that "What you learned & How you learned" is more important than
+                "Where you
+                learned". Therefore, we have designed a comprehensive syllabus that maximizes the value of your time and
+                equips you
+                with essential skills for a successful photography career.
+            </p>
+            <p class="story-text">
+                Our program emphasizes practical experience alongside theoretical knowledge,
+                ensuring that your learning is efficient and avoids unnecessary content that can be found on
+                YouTube or Google. We focus on industry-relevant skills that prepare you for real-world photography
+                challenges.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Mentor Section -->
+<section class="section mentor-section">
+    <div class="container">
+        <div class="mentor-content">
+            <div class="mentor-image animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Hari R Krishnagadha">
+            </div>
+            <div class="mentor-info animate-on-scroll">
+                <h2>Meet Our Mentor</h2>
+                <h3>Hari R Krishnagadha</h3>
+                <p style="text-align: justify;">
+                    Our esteemed mentor, Hari R Krishnagadha, is a professional photographer with 7 years of experience
+                    in
+                    commercial photography and 5 years of teaching experience. His exceptional ability and dedication
+                    ensure
+                    that students grasp even the most challenging concepts of photography and lighting.
+                </p>
+                <p style="margin-top: 20px; text-align: justify;">
+                    Specializing in product and portrait photography, Hari R Krishnagadha offers students
+                    the opportunity to learn the best techniques and insights from his extensive experience. Many
+                    students have
+                    learned photography under his guidance and are successfully pursuing their careers in the field.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section class="section values-section">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Why Choose HRK?</h2>
+        <div class="values-grid">
+            <div class="value-card animate-on-scroll">
+                <div class="value-icon">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <h3>Practical Learning</h3>
+                <p>Hands-on experience with professional equipment and real-world projects that prepare you for industry
+                    challenges.</p>
+            </div>
+            <div class="value-card animate-on-scroll">
+                <div class="value-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Expert Mentorship</h3>
+                <p>Learn from experienced professionals who guide you through every step of your photography journey.
+                </p>
+            </div>
+            <div class="value-card animate-on-scroll">
+                <div class="value-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h3>Industry Recognition</h3>
+                <p>Comprehensive curriculum designed to meet current industry standards and market demands.</p>
+            </div>
+            <div class="value-card animate-on-scroll">
+                <div class="value-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Small Batches</h3>
+                <p>Personalized attention with limited students per batch ensuring quality education for everyone.</p>
+            </div>
+            <div class="value-card animate-on-scroll">
+                <div class="value-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3>Career Support</h3>
+                <p>Portfolio development and career guidance to help you establish yourself in the photography industry.
+                </p>
+            </div>
+            <div class="value-card animate-on-scroll">
+                <div class="value-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Creative Excellence</h3>
+                <p>Focus on developing your unique artistic vision while mastering technical photography skills.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section
+    <section class="section stats-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll" style="color: white;">Our Achievements</h2>
+            <div class="stats-grid">
+                <div class="stat-item animate-on-scroll">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Students Trained</span>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Success Rate</span>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Student Support</span>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+<script>
+    // Smooth scroll animation on page load and scroll
+    function animateOnScroll() {
+        const elements = document.querySelectorAll('.animate-on-scroll');
+
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('animated');
+            }
+        });
+    }
+
+    // Counter animation
+    function animateCounters() {
+        const counters = document.querySelectorAll('.stat-number');
+
+        counters.forEach(counter => {
+            const target = parseInt(counter.textContent.replace(/[^\d]/g, ''));
+            const increment = target / 100;
+            let count = 0;
+
+            const updateCounter = () => {
+                if (count < target) {
+                    count += increment;
+                    if (counter.textContent.includes('+')) {
+                        counter.textContent = Math.ceil(count) + '+';
+                    } else if (counter.textContent.includes('%')) {
+                        counter.textContent = Math.ceil(count) + '%';
+                    } else if (counter.textContent.includes('/')) {
+                        counter.textContent = '24/7';
+                    } else {
+                        counter.textContent = Math.ceil(count);
+                    }
+                    requestAnimationFrame(updateCounter);
+                }
+            };
+
+            // Start animation when element is visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateCounter();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            observer.observe(counter);
+        });
+    }
+
+    // // Parallax effect for hero background
+    // function parallaxEffect() {
+    //     const scrolled = window.pageYOffset;
+    //     const rate = scrolled * -0.5;
+    //     const heroBackground = document.querySelector('.hero-bg');
+
+    //     if (heroBackground) {
+    //         heroBackground.style.transform = `translateY(${rate}px)`;
+    //     }
+    // }
+
+    // Event listeners
+    window.addEventListener('scroll', () => {
+        animateOnScroll();
+        parallaxEffect();
+    });
+
+    window.addEventListener('load', () => {
+        animateOnScroll();
+        animateCounters();
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+
+
+
+{%endblock%}

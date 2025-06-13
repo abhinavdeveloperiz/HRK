@@ -1,0 +1,278 @@
+{%extends 'base.html'%}
+{% load static %}
+<title>{% block title %}HRK | Home{% endblock %}</title>
+{%block content%}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<style>
+    .image-modal {
+        display: none;
+        position: fixed;
+        z-index: 1050;
+        padding-top: 60px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .image-modal .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 90%;
+        max-height: 100%;
+        animation: zoom 0.3s ease;
+        align-items: center;
+    }
+
+    /* @media (max-width: 768px) {
+        .image-modal .modal-content {
+            margin-top: 50px;
+        }
+        
+    } */
+
+    .image-modal img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 12px;
+    }
+
+    @keyframes zoom {
+        from {
+            transform: scale(0.8);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    .image-modal .close {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: #fff;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    .image-modal .close:hover {
+        color: #ff0000;
+    }
+</style>
+
+
+<header>
+    <div class="header position-relative text-white mt-5">
+        <img src="{{image.image.url}}"
+            alt="Photography School" class="img-fluid w-100 header-img logo-animate"
+            style="height: 100vh; object-fit: cover;">
+
+        <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center p-3"
+            data-aos="fade-right">
+            <h1 class="header-title">HRK School Of Photography</h1>
+            <p class="header-subtitle">Desire to grow professionally</p>
+            <a href="{%url 'service'%}"><button class="btn btn-custom">Explore Courses</button></a>
+
+
+
+        </div>
+    </div>
+</header>
+
+<!-- Intro Images Section -->
+<div class="container-fluid bg-black py-5">
+    <div class="container">
+        <div class="row">
+            <div class="head-img col-12 col-md-6 mb-4 mb-md-0">
+                <img src="{% static 'image/19.png' %}" alt="Professional Photographer">
+            </div>
+            <div class="head-img col-12 col-md-6">
+                <img src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2024/02/how-to-become-a-good-photographer-106.jpg?fit=1500%2C1000&ssl=1"
+                    alt="Photography Learning">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- office gallery  -->
+<section class="py-5 bg-black">
+    <div class="container">
+        <h2 class="section-title border-bottom">Mentors Gallery</h2>
+        <div class="row g-4">
+            {% for i in office|slice:":8" %}
+            <div class="col-6 col-md-6 col-lg-3 ">
+                <img src="{{ i.image.url }}" alt="Portrait Photography" class="gallery-img img-fluid"
+                    onclick="openModal(this)">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <a href="{%url 'office_gallery'%}" class="mx-auto d-flex justify-content-center mt-4 text-decoration-none"><button
+            class="btn btn-custom">View More</button></a>
+
+</section>
+<!-- student gallery -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <h2 class="section-title text-white border-bottom">Students Work</h2>
+        <div class="row g-4">
+            {% for i in student|slice:":8" %}
+            <div class="col-6 col-md-6 col-lg-3">
+                <img src="{{ i.image.url }}" alt="Portrait Photography" class="gallery-img img-fluid"
+                    onclick="openModal(this)">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <a href="{%url 'student_gallery'%}" class="mx-auto d-flex justify-content-center mt-4 text-decoration-none"><button
+            class="btn btn-custom">View More</button></a>
+
+</section>
+
+
+<!-- Modal -->
+<div id="imageModal" class="image-modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+
+
+
+
+
+<!-- About Section -->
+<section class="bg-black" style="padding-top: 100px; padding-bottom: 50px;">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+                <img src="{%static 'image/head.png'%}" alt="Photography Studio"
+                    class="img-fluid rounded shadow rounded-0">
+            </div>
+            <div class="col-lg-6 mb-4 mb-lg-0 text-white">
+                <h2 class="display-4 fw-bold mb-4">Master the Art of Photography</h2>
+                <p class="lead mb-4" style="text-align: justify;">"Our esteemed mentor, Hari R Krishnagadha, is a
+                    professional photographer with 7 years of experience in commercial photography and 5 years in
+                    teaching. His expertise ensures students understand even the most challenging concepts of
+                    photography and lighting. Specializing in product and portrait photography, he shares valuable
+                    techniques and insights, guiding many students who now thrive in the industry."</p>
+
+                <a href="{% url 'about' %}"><button class="btn btn-custom">Learn More About Us</button></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Courses Section -->
+<section class="course py-5 ">
+    <div class="container">
+        <h2 class="section-title" style="color: white;">Our Photography Courses</h2>
+        <div class="row g-4">
+
+            {% for s in service %}
+            <div class="col-lg-6 col-md-6 mb-4">
+                <div class="course-card h-100">
+                    <a href="{% url 'service_details' s.id %}" class="text-decoration-none text-dark">
+                        <div class="card-image-wrapper text-center mb-3" data-aos="flip-down">
+                            <img src="{{ s.image.url }}" alt="{{ s.title }}" class="img-fluid rounded">
+                            <h5 class="card-title-overlay mt-2">{{ s.title }}</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+
+
+
+            <a href="{% url 'service' %}" style="text-decoration: none;">
+                <button class="btn btn-custom d-flex mx-auto">View More</button>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- Testimonials Section -->
+<section class="container py-5">
+    <h2 class="section-title text-dark">What Our Student Says</h2>
+    <div class="row text-center">
+        <div class="col-md-12">
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    {% for testimonial in testimonials %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <div class="mt-5 mb-4">
+                            {% if testimonial.image %}
+                                <img src="{{ testimonial.image.url }}" class="rounded-2 img-fluid shadow-1-strong"
+                                     alt="{{ testimonial.name }}" width="100" height="100">
+                            {% else %}
+                                <img src="{% static 'default-avatar.jpg' %}" class="rounded-circle img-fluid shadow-1-strong"
+                                     alt="default image" width="100" height="100">
+                            {% endif %}
+                        </div>
+                        <p class="lead font-italic mx-4 mx-md-5">"{{ testimonial.description }}"</p>
+                        <p class="text-muted mb-0">- {{ testimonial.name }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-5" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-5" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Call to Action Section -->
+<section class="py-5 bg-dark text-white">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="display-4 mb-4">Ready to Start Your Photography Journey?</h2>
+                <p class="lead mb-4">Join thousands of students who have transformed their passion into profession.
+                    Enroll today and get access to our comprehensive photography courses.</p>
+                <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+                    <a href="tel:+918075918884"><button class="btn btn-custom btn-lg">Enroll Now</button></a>
+                    <a href="{%url 'contact'%}"><button class="btn btn-custom btn-lg">Contact Us</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+    function openModal(img) {
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImg");
+        modal.style.display = "block";
+        modalImg.src = img.src;
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("imageModal");
+        modal.style.display = "none";
+    }
+</script>
+{%endblock%}

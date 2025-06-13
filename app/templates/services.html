@@ -1,0 +1,263 @@
+{%extends 'base.html'%}
+{% load static %}
+<title>{% block title %}HRK | Service{% endblock %}</title>
+{%block content%}
+<link rel="stylesheet" href="{% static  'css/service.css' %}">
+
+<section class="hero-section">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 class="hero-title">Our Services</h1>
+        <p class="hero-subtitle">Professional Photography Education • Expert Training • Industry-Ready Skills</p>
+    </div>
+</section>
+
+<!-- Main Courses Section -->
+<section class="courses-section bg-black">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll text-white">Photography Courses</h2>
+        <div class="courses-grid">
+            <!-- Diploma Course -->
+            {% for s in services %}
+            <div class="course-card animate-on-scroll">
+                <div class="course-header">
+                    <img src="{{ s.image.url }}" alt="{{ s.title }}">
+                    <div class="course-overlay">
+                        <h3 class="course-title">{{ s.title }}</h3>
+                    </div>
+                </div>
+                <div class="course-body">
+                    <div class="course-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>{{ s.duration }}</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>{{ s.type }}</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>{{ s.level }} Level</span>
+                        </div>
+                    </div>
+                    <a href="{% url 'service_details' s.id %}" class="btn btn-outline-dark rounded-5 ">Details</a>
+                </div>
+            </div>
+            {% endfor %}
+
+
+
+        </div>
+    </div>
+</section>
+
+<!-- Course Content: Basics & Theory -->
+<!-- <section class="content-section">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Basics & Theory</h2>
+        <div class="content-grid">
+            <div class="content-card animate-on-scroll">
+                <div class="content-image">
+                    <img src="https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Camera Basics">
+                    <div class="content-overlay">
+                        <h3 class="content-title">Camera Fundamentals</h3>
+                    </div>
+                </div>
+                <div class="content-body">
+                    <ul class="content-list">
+                        <li>Understanding Photography & Camera</li>
+                        <li>Understanding Exposure</li>
+                        <li>Learning Manual Controls</li>
+                        <li>Understanding Different Shooting Modes</li>
+                        <li>Understanding Camera Sensors & Lenses</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-card animate-on-scroll">
+                <div class="content-image">
+                    <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Technical Settings">
+                    <div class="content-overlay">
+                        <h3 class="content-title">Technical Mastery</h3>
+                    </div>
+                </div>
+                <div class="content-body">
+                    <ul class="content-list">
+                        <li>Understanding White Balance & Applications</li>
+                        <li>Understanding Metering Modes & Uses</li>
+                        <li>Learning Compositions & Framing</li>
+                        <li>Understanding Image File Formats</li>
+                        <li>Properties of Ambient Lights</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-card animate-on-scroll">
+                <div class="content-image">
+                    <img src="https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Light Control">
+                    <div class="content-overlay">
+                        <h3 class="content-title">Light Control</h3>
+                    </div>
+                </div>
+                <div class="content-body">
+                    <ul class="content-list">
+                        <li>Shooting with Ambient Lights</li>
+                        <li>Learning to Control Ambient Light</li>
+                        <li>Modifying Light Using Different Tools</li>
+                        <li>Understanding Light Properties</li>
+                        <li>Natural Light Photography Techniques</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- Photography Specialties -->
+<section class="specialty-section">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Photography Specializations</h2>
+        <div class="specialty-grid">
+            <div class="specialty-card animate-on-scroll">
+                <img src="{% static 'image/2.png' %}" alt="Product Photography">
+                <div class="specialty-overlay">
+                    <h3 class="specialty-title">Product Photography</h3>
+                </div>
+            </div>
+
+            <div class="specialty-card animate-on-scroll">
+                <img src="{% static 'image/12.png' %}" alt="Fashion Photography">
+                    alt="Food Photography">
+                <div class="specialty-overlay">
+                    <h3 class="specialty-title">Fashion Photography</h3>
+                </div>
+            </div>
+
+            <div class="specialty-card animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                    alt="Portrait Photography">
+                <div class="specialty-overlay">
+                    <h3 class="specialty-title">Portrait Photography</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Artificial Lighting Section -->
+<!-- <section class="content-section">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll">Artificial Lighting</h2>
+        <div class="content-grid">
+            <div class="content-card animate-on-scroll">
+                <div class="content-image">
+                    <img src="https://d3e79alseq88cx.cloudfront.net/cms/62d03917fbbeae0bc868649c/1600"
+                        alt="Studio Equipment">
+                    <div class="content-overlay">
+                        <h3 class="content-title">Studio Equipment</h3>
+                    </div>
+                </div>
+                <div class="content-body">
+                    <ul class="content-list">
+                        <li>Introduction to Artificial Lights</li>
+                        <li>Studio Equipment Fundamentals</li>
+                        <li>Understanding Flash Lights</li>
+                        <li>Continuous Lights Applications</li>
+                        <li>Professional Lighting Setup</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-card animate-on-scroll">
+                <div class="content-image">
+                    <img src="https://images.unsplash.com/photo-1460134846237-51c777df6111?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        alt="Lighting Theory">
+                    <div class="content-overlay">
+                        <h3 class="content-title">Lighting Theory</h3>
+                    </div>
+                </div>
+                <div class="content-body">
+                    <ul class="content-list">
+                        <li>Important Theories of Artificial Lighting</li>
+                        <li>Different Types of Light Modifiers</li>
+                        <li>Understanding Light Attachments</li>
+                        <li>Shooting with Basic Light Setup</li>
+                        <li>Advanced Lighting Techniques</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+
+<!-- Call to Action -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content animate-on-scroll">
+            <h2>Ready to Start Your Photography Journey?</h2>
+            <p>Join hundreds of students who have transformed their passion into profession</p>
+            <div class="cta-buttons">
+                <a href="tel:+918075918884"><button class="cta-btn primary">Enroll Now</button></a>
+                <a href="{% url 'contact' %}" class="cta-btn">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Scroll animation
+    function animateOnScroll() {
+        const elements = document.querySelectorAll('.animate-on-scroll');
+
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.classList.add('animated');
+            }
+        });
+    }
+
+    // Parallax effect
+    function parallaxEffect() {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.3;
+        const heroBackground = document.querySelector('.hero-bg');
+
+        if (heroBackground && scrolled < window.innerHeight) {
+            heroBackground.style.transform = `translateY(${rate}px)`;
+        }
+    }
+
+    // Event listeners
+    window.addEventListener('scroll', () => {
+        animateOnScroll();
+        parallaxEffect();
+    });
+
+    window.addEventListener('load', () => {
+        animateOnScroll();
+    });
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+{%endblock%}
