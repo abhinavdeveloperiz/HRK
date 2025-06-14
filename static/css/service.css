@@ -13,6 +13,7 @@ body {
     overflow: hidden;
 }
 
+
 .hero-bg {
     position: absolute;
     top: 0;
@@ -51,7 +52,8 @@ body {
     text-align: center;
     color: white;
     max-width: 800px;
-    padding: 0 20px;
+    padding: 0px;
+    text-align: center;
 }
 
 .hero-title {
@@ -67,6 +69,7 @@ body {
     margin-bottom: 30px;
     opacity: 0.9;
     animation: fadeInUp 1s ease-out 0.3s both;
+    padding: 1px;
 }
 
 @keyframes fadeInUp {
@@ -409,7 +412,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-title {
-        font-size: 3rem;
+        font-size: 3.1rem;
     }
 
     .courses-grid {

@@ -12,6 +12,11 @@ body {
   justify-content: center;
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .hero-section {
+    height: 70vh;
+  }
+}
 
 .hero-bg {
   position: absolute;
@@ -54,6 +59,12 @@ body {
   padding: 0 20px;
 }
 
+@media (max-width: 768px) {
+  .hero-content {
+    margin-top: 80px;
+  }
+}
+
 .hero-title {
   font-size: 4rem;
   font-weight: 300;
@@ -74,6 +85,14 @@ body {
   line-height: 1.8;
   opacity: 0.8;
   animation: fadeInUp 1s ease-out 0.6s both;
+  text-align: center;
+}
+@media (max-width: 768px) {
+
+  .hero-description {
+    font-size: 1rem;
+    text-align: justify;
+  }
 }
 
 @keyframes fadeInUp {
@@ -341,7 +360,7 @@ body {
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   .stats-grid {
