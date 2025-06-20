@@ -26,15 +26,7 @@
         <!-- Bottom Section: Details Cards -->
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
-            <div class="col">
-                <div class="d-flex align-items-center bg-white shadow-sm rounded p-4 h-100">
-                    <i class="bi bi-cash-coin fs-3 text-success me-3"></i>
-                    <div>
-                        <div class="small text-muted">Fees</div>
-                        <div class="fw-semibold">₹{{ service.fees }}</div>
-                    </div>
-                </div>
-            </div>
+
 
             <div class="col">
                 <div class="d-flex align-items-center bg-white shadow-sm rounded p-4 h-100">
@@ -65,15 +57,33 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
+        <h2 class="text-white text-center my-5">Topics</h2>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <ul class="list-group list-group-flush bg-transparent">
+                {% if service.topic1 %}<li class="list-group-item bg-transparent text-light"><i class="fas fa-check-circle text-success me-2"></i>{{ service.topic1 }}</li>{% endif %}
+                {% if service.topic2 %}<li class="list-group-item bg-transparent text-light"><i class="fas fa-check-circle text-success me-2"></i>{{ service.topic2 }}</li>{% endif %}
+                {% if service.topic3 %}<li class="list-group-item bg-transparent text-light"><i class="fas fa-check-circle text-success me-2"></i>{{ service.topic3 }}</li>{% endif %}
+                {% if service.topic4 %}<li class="list-group-item bg-transparent text-light"><i class="fas fa-check-circle text-success me-2"></i>{{ service.topic4 }}</li>{% endif %}
+                {% if service.topic5 %}<li class="list-group-item bg-transparent text-light"><i class="fas fa-check-circle text-success me-2"></i>{{ service.topic5 }}</li>{% endif %}
+                {% if service.topic6 %}<li class="list-group-item bg-transparent text-light"><i class="fas fa-check-circle text-success me-2"></i>{{ service.topic6 }}</li>{% endif %}
+                {% if service.topic7 %}<li class="list-group-item bg-transparent text-light"><i class="fas fa-check-circle text-success me-2"></i>{{ service.topic7 }}</li>{% endif %}
+                {% if service.topic8 %}<li class="list-group-item bg-transparent text-light"><i class="fas fa-check-circle text-success me-2"></i>{{ service.topic8 }}</li>{% endif %}
+                {% if service.topic9 %}<li class="list-group-item bg-transparent text-light"><i class="fas fa-check-circle text-success me-2"></i>{{ service.topic9 }}</li>{% endif %}
+                {% if service.topic10 %}<li class="list-group-item bg-transparent text-light"><i class="fas fa-check-circle text-success me-2"></i>{{ service.topic10 }}</li>{% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+
 
         <!-- CTA -->
         <div class="mt-5 text-center">
             <a href="tel:+918075918884" class="btn btn-outline-light px-4 py-2">Contact Now</a>
-          
+
         </div>
 
     </div>

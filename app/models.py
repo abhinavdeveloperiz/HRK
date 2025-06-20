@@ -21,6 +21,17 @@ class Service(models.Model):
     level = models.CharField(max_length=50)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    topic1=models.CharField(max_length=100, blank=True, null=True)
+    topic2=models.CharField(max_length=100, blank=True, null=True)  
+    topic3=models.CharField(max_length=100, blank=True, null=True)
+    topic4=models.CharField(max_length=100, blank=True, null=True)
+    topic5=models.CharField(max_length=100, blank=True, null=True)
+    topic6=models.CharField(max_length=100, blank=True, null=True)
+    topic7=models.CharField(max_length=100, blank=True, null=True)
+    topic8=models.CharField(max_length=100, blank=True, null=True)
+    topic9=models.CharField(max_length=100, blank=True, null=True)
+    topic10=models.CharField(max_length=100, blank=True, null=True)
+
     def __str__(self):
         return self.title
 

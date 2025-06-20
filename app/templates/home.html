@@ -69,8 +69,7 @@
 
 <header>
     <div class="header position-relative text-white mt-5">
-        <img src="{{image.image.url}}"
-            alt="Photography School" class="img-fluid w-100 header-img logo-animate"
+        <img src="{{image.image.url}}" alt="Photography School" class="img-fluid w-100 header-img logo-animate"
             style="height: 100vh; object-fit: cover;">
 
         <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center p-3"
@@ -156,11 +155,11 @@
             </div>
             <div class="col-lg-6 mb-4 mb-lg-0 text-white">
                 <h2 class="display-4 fw-bold mb-4">Master the Art of Photography</h2>
-                <p class="lead mb-4" style="text-align: justify;">"Our esteemed mentor, Hari R Krishnagadha, is a
-                    professional photographer with 7 years of experience in commercial photography and 5 years in
-                    teaching. His expertise ensures students understand even the most challenging concepts of
-                    photography and lighting. Specializing in product and portrait photography, he shares valuable
-                    techniques and insights, guiding many students who now thrive in the industry."</p>
+                <p class="lead mb-4" style="text-align: justify;">"Understanding photography and lighting is essential
+                    for creating impactful images, whether for professional work or personal expression. Proper lighting
+                    enhances mood, depth, and texture, turning your shots into visually compelling stories. At HRK
+                    School of Photography, we provide in-depth training to help you master these essential skills
+                    with confidence."</p>
 
                 <a href="{% url 'about' %}"><button class="btn btn-custom">Learn More About Us</button></a>
             </div>
@@ -212,11 +211,13 @@
                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
                         <div class="mt-5 mb-4">
                             {% if testimonial.image %}
-                                <img src="{{ testimonial.image.url }}" class="img-fluid shadow-1-strong" style="height: 90px; width: 100px; object-fit: cover; border-radius: 60%;"
-                                     alt="{{ testimonial.name }}" width="100" height="100">
+                            <img src="{{ testimonial.image.url }}" class="img-fluid shadow-1-strong"
+                                style="height: 90px; width: 100px; object-fit: cover; border-radius: 60%;"
+                                alt="{{ testimonial.name }}" width="100" height="100">
                             {% else %}
-                                <img src="{% static 'default-avatar.jpg' %}" class="rounded-circle img-fluid shadow-1-strong"
-                                     alt="No image" width="100" height="100">
+                            <img src="{% static 'default-avatar.jpg' %}"
+                                class="rounded-circle img-fluid shadow-1-strong" alt="No image" width="100"
+                                height="100">
                             {% endif %}
                         </div>
                         <p class="lead font-italic mx-4 mx-md-5">"{{ testimonial.description }}"</p>
