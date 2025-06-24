@@ -71,37 +71,68 @@
     <div class="header position-relative text-white mt-5">
         <img src="{{image.image.url}}" alt="Photography School" class="img-fluid w-100 header-img logo-animate"
             style="height: 100vh; object-fit: cover;">
-
         <div class="overlay position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center text-center p-3"
             data-aos="fade-right">
             <h1 class="header-title">HRK School Of Photography</h1>
             <p class="header-subtitle">Desire to grow professionally</p>
             <a href="{%url 'service'%}"><button class="btn btn-custom">Explore Courses</button></a>
-
-
-
         </div>
     </div>
 </header>
 
 <!-- Intro Images Section -->
-<div class="container-fluid bg-black py-5">
+<!-- <div class="container-fluid bg-black py-5">
     <div class="container">
         <div class="row">
             <div class="head-img col-12 col-md-6 mb-4 mb-md-0">
-                <img src="{% static 'image/19.png' %}" alt="Professional Photographer">
+                <img src="{{image.left.url}}" alt="Professional Photographer">
             </div>
             <div class="head-img col-12 col-md-6">
-                <img src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2024/02/how-to-become-a-good-photographer-106.jpg?fit=1500%2C1000&ssl=1"
+                <img src="{{image.right.url}}"
                     alt="Photography Learning">
             </div>
         </div>
     </div>
+</div> -->
+<!-- Carousel Start -->
+
+
+<div class="container-fluid bg-black py-5">
+  <div class="container">
+    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner text-center">
+        <h2 class="text-white text-center mb-4 fw-light">What's Coming Up</h2>
+        <!-- First Slide -->
+        <div class="carousel-item active">
+          <img src="{{ image.left.url }}" class="d-block mx-auto carousel-img" alt="Professional Photographer">
+        </div>
+
+        <!-- Second Slide -->
+        <div class="carousel-item">
+          <img src="{{ image.right.url }}" class="d-block mx-auto carousel-img" alt="Photography Learning">
+        </div>
+
+      </div>
+
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
 </div>
+
+
+
+
 <!-- office gallery  -->
 <section class="py-5 bg-black">
     <div class="container">
-        <h2 class="section-title border-bottom">Mentors Gallery</h2>
         <div class="row g-4">
             {% for i in office|slice:":8" %}
             <div class="col-6 col-md-6 col-lg-3 ">
@@ -115,23 +146,7 @@
             class="btn btn-custom">View More</button></a>
 
 </section>
-<!-- student gallery -->
-<section class="py-5 bg-dark">
-    <div class="container">
-        <h2 class="section-title text-white border-bottom">Students Work</h2>
-        <div class="row g-4">
-            {% for i in student|slice:":8" %}
-            <div class="col-6 col-md-6 col-lg-3">
-                <img src="{{ i.image.url }}" alt="Portrait Photography" class="gallery-img img-fluid"
-                    onclick="openModal(this)">
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-    <a href="{%url 'student_gallery'%}" class="mx-auto d-flex justify-content-center mt-4 text-decoration-none"><button
-            class="btn btn-custom">View More</button></a>
 
-</section>
 
 
 <!-- Modal -->
@@ -196,7 +211,23 @@
     </div>
 </section>
 
+<!-- student gallery -->
+<section class="py-5 bg-dark">
+    <div class="container">
+        <h2 class="section-title text-white border-bottom">Students Work</h2>
+        <div class="row g-4">
+            {% for i in student|slice:":8" %}
+            <div class="col-6 col-md-6 col-lg-3">
+                <img src="{{ i.image.url }}" alt="Portrait Photography" class="gallery-img img-fluid"
+                    onclick="openModal(this)">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <a href="{%url 'student_gallery'%}" class="mx-auto d-flex justify-content-center mt-4 text-decoration-none"><button
+            class="btn btn-custom">View More</button></a>
 
+</section>
 
 
 

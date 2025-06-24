@@ -3,6 +3,8 @@ from django.db import models
 # Create your models here.
 class Head(models.Model):
     image = models.ImageField(upload_to='head/')
+    left=models.ImageField(upload_to="head/")
+    right=models.ImageField(upload_to="head/")
 
 class student_gallery(models.Model):
     image = models.ImageField(upload_to='student_gallery/')
