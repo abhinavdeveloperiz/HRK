@@ -5,14 +5,22 @@ class Head(models.Model):
     image = models.ImageField(upload_to='head/')
     left=models.ImageField(upload_to="head/")
     right=models.ImageField(upload_to="head/")
+    def __str__(self):
+        return f"Head Section {self.id}"
+    
 
 class student_gallery(models.Model):
     image = models.ImageField(upload_to='student_gallery/')
+    def __str__(self):
+        return f"Student Image {self.id}"
 
 
 class office_gallery(models.Model):
     image = models.ImageField(upload_to='office_gallery/')
-
+    def __str__(self):
+        return f"Office Image {self.id}"
+    
+    
 class Service(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
