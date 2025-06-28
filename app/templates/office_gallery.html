@@ -6,16 +6,55 @@
 
 <section class="py-5 bg-dark">
     <div class="container">
-        <h2 class="section-title mt-5 pt-5">Mentors Gallery</h2>
+        <h2 class="section-title mt-5 pt-5 text-white">Mentors Gallery</h2>
         <div class="row g-4">
-            {% for i in office %}
-            <div class="col-lg-3 col-md-6">
-                <img src="{{ i.image.url }}" alt="Portrait Photography" class="gallery-img img-fluid" onclick="openModal(this)">
+            {% for i in page_obj %}
+            <div class="col-6 col-lg-3 col-md-6">
+                <img src="{{ i.image.url }}" alt="Portrait Photography" class="gallery-img img-fluid"
+                    onclick="openModal(this)">
             </div>
             {% endfor %}
         </div>
+
+        <!-- Pagination Controls -->
+        <nav class="mt-4">
+            <ul class="pagination justify-content-center bg-dark p-2 rounded">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link bg-dark text-white border-0"
+                        href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <span class="page-link bg-dark text-white border-0">Previous</span>
+                </li>
+                {% endif %}
+
+                {% for num in page_obj.paginator.page_range %}
+                <li class="page-item {% if page_obj.number == num %}active{% endif %}">
+                    <a class="page-link {% if page_obj.number == num %}bg-white text-dark{% else %}bg-dark text-white{% endif %} border-0"
+                        href="?page={{ num }}">
+                        {{ num }}
+                    </a>
+                </li>
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link bg-dark text-white border-0"
+                        href="?page={{ page_obj.next_page_number }}">Next</a>
+                </li>
+                {% else %}
+                <li class="page-item disabled">
+                    <span class="page-link bg-dark text-white border-0">Next</span>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+
     </div>
 </section>
+
 
 <!-- Modal -->
 <div id="imageModal" class="modal" onclick="closeModal(event)">

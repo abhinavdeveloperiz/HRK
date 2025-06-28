@@ -34,13 +34,28 @@ def Service_details(request,id):
     }
     return render(request, 'service_details.html',context)
 
+from django.core.paginator import Paginator
+
 def Student_gallery(request):
-    student= student_gallery.objects.all()
-    return render(request, 'student_gallery.html', {'student': student})
+    office = student_gallery.objects.all()
+    paginator = Paginator(office, 10)  # Show 8 images per page
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'student_gallery.html', {'page_obj': page_obj})
+
+
 
 def Office_gallery(request):
+
     office = office_gallery.objects.all()
-    return render(request, 'office_gallery.html', {'office': office})
+    paginator = Paginator(office, 10)  # Show 8 images per page
+
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'office_gallery.html', {'page_obj': page_obj})
+
+
 
 def Contact(request):   
     return render(request, 'contact.html')
