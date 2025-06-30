@@ -52,3 +52,7 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+class Mentor_image(models.Model):
+    image=models.ImageField(upload_to="mentors_image")

@@ -46,7 +46,7 @@
     <div class="container">
         <div class="mentor-content">
             <div class="mentor-image animate-on-scroll">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                <img src="{{mentor.image.url}}"
                     alt="Hari R Krishnagadha">
             </div>
             <div class="mentor-info animate-on-scroll">
@@ -124,30 +124,6 @@
     </div>
 </section>
 
-<!-- Stats Section
-    <section class="section stats-section">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll" style="color: white;">Our Achievements</h2>
-            <div class="stats-grid">
-                <div class="stat-item animate-on-scroll">
-                    <span class="stat-number">500+</span>
-                    <span class="stat-label">Students Trained</span>
-                </div>
-                <div class="stat-item animate-on-scroll">
-                    <span class="stat-number">7</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-item animate-on-scroll">
-                    <span class="stat-number">95%</span>
-                    <span class="stat-label">Success Rate</span>
-                </div>
-                <div class="stat-item animate-on-scroll">
-                    <span class="stat-number">24/7</span>
-                    <span class="stat-label">Student Support</span>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
 <script>
     // Smooth scroll animation on page load and scroll
@@ -202,17 +178,6 @@
             observer.observe(counter);
         });
     }
-
-    // // Parallax effect for hero background
-    // function parallaxEffect() {
-    //     const scrolled = window.pageYOffset;
-    //     const rate = scrolled * -0.5;
-    //     const heroBackground = document.querySelector('.hero-bg');
-
-    //     if (heroBackground) {
-    //         heroBackground.style.transform = `translateY(${rate}px)`;
-    //     }
-    // }
 
     // Event listeners
     window.addEventListener('scroll', () => {

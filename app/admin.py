@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import student_gallery, office_gallery, Service, Head, Testimonial
+from .models import student_gallery, office_gallery, Service, Head, Testimonial,Mentor_image
 
 # ======================
 # Utility: Thumbnail Display
@@ -53,3 +53,6 @@ class TestimonialAdmin(admin.ModelAdmin):
         return "No Image"
 
     list_display = ['name', 'image_preview', 'description']
+
+
+admin.site.register(Mentor_image)

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from app.models import student_gallery, office_gallery,Service,Head,Testimonial
+from app.models import student_gallery, office_gallery,Service,Head,Testimonial,Mentor_image
 
 # Create your views here.
 def Home(request):
@@ -18,7 +18,8 @@ def Home(request):
     return render(request, 'home.html',context)
 
 def About(request):
-    return render(request, 'about.html')
+    mentor=Mentor_image.objects.first()
+    return render(request, 'about.html',{"mentor":mentor})
 
 def Services(request):
     services = Service.objects.all()
