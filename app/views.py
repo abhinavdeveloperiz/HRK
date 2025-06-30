@@ -38,7 +38,7 @@ from django.core.paginator import Paginator
 
 def Student_gallery(request):
     office = student_gallery.objects.all()
-    paginator = Paginator(office, 10)  # Show 8 images per page
+    paginator = Paginator(office, 12)  # Show 8 images per page
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -49,7 +49,7 @@ def Student_gallery(request):
 def Office_gallery(request):
 
     office = office_gallery.objects.all()
-    paginator = Paginator(office, 10)  # Show 8 images per page
+    paginator = Paginator(office, 12)  # Show 8 images per page
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
