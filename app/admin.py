@@ -2,20 +2,20 @@ from django.contrib import admin
 from django.utils.html import format_html
 from .models import student_gallery, office_gallery, Service, Head, Testimonial,Mentor_image
 
-# ======================
-# Utility: Thumbnail Display
-# ======================
+
+
+
+admin.site.site_header = "HRK"
+admin.site.site_title = "HRK Admin Portal"
+admin.site.index_title = "Welcome to HRK Admin"
+
+
 def thumbnail(obj):
     if obj.image:
         return format_html('<img src="{}" width="100" style="border-radius: 8px;" />', obj.image.url)
     return "No Image"
 
 thumbnail.short_description = 'Preview'
-
-
-# ======================
-# Admin Classes
-# ======================
 
 @admin.register(student_gallery)
 class StudentGalleryAdmin(admin.ModelAdmin):
@@ -55,4 +55,13 @@ class TestimonialAdmin(admin.ModelAdmin):
     list_display = ['name', 'image_preview', 'description']
 
 
-admin.site.register(Mentor_image)
+@admin.register(Mentor_image)
+class MentorImageAdmin(admin.ModelAdmin):
+    def image_preview(self, obj):
+        if obj.image:
+            return format_html('<img src="{}" width="80" style="border-radius: 8px;" />', obj.image.url)
+        return "No Image"
+    image_preview.short_description = 'Preview'
+
+    list_display = ['id','image_preview']
+
