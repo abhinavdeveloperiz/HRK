@@ -3,8 +3,8 @@ from app.models import student_gallery, office_gallery,Service,Head,Testimonial,
 
 # Create your views here.
 def Home(request):
-    student= student_gallery.objects.all()
-    office = office_gallery.objects.all()
+    student= student_gallery.objects.order_by('-id')[:8]
+    office = office_gallery.objects.order_by('-id')[:8]
     service= Service.objects.all()
     head_image = Head.objects.first()
     testimonials= Testimonial.objects.all() 
@@ -38,7 +38,7 @@ def Service_details(request,id):
 from django.core.paginator import Paginator
 
 def Student_gallery(request):
-    office = student_gallery.objects.all()
+    office = student_gallery.objects.order_by('-id')
     paginator = Paginator(office, 12)  # Show 8 images per page
 
     page_number = request.GET.get('page')
@@ -49,7 +49,7 @@ def Student_gallery(request):
 
 def Office_gallery(request):
 
-    office = office_gallery.objects.all()
+    office = office_gallery.objects.order_by('-id')
     paginator = Paginator(office, 12)  # Show 8 images per page
 
     page_number = request.GET.get('page')

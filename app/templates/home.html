@@ -98,33 +98,34 @@
 
 
 <div class="container-fluid bg-black py-5">
-  <div class="container">
-    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner text-center">
-        <h2 class="text-white text-center mb-4 fw-light">What's Coming Up</h2>
-        <!-- First Slide -->
-        <div class="carousel-item active">
-          <img src="{{ image.left.url }}" class="d-block mx-auto carousel-img" alt="Professional Photographer">
+    <div class="container">
+        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner text-center">
+                <h2 class="text-white text-center mb-4 fw-light">What's Coming Up</h2>
+                <!-- First Slide -->
+                <div class="carousel-item active">
+                    <img src="{{ image.left.url }}" class="d-block mx-auto carousel-img"
+                        alt="Professional Photographer">
+                </div>
+
+                <!-- Second Slide -->
+                <div class="carousel-item">
+                    <img src="{{ image.right.url }}" class="d-block mx-auto carousel-img" alt="Photography Learning">
+                </div>
+
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-
-        <!-- Second Slide -->
-        <div class="carousel-item">
-          <img src="{{ image.right.url }}" class="d-block mx-auto carousel-img" alt="Photography Learning">
-        </div>
-
-      </div>
-
-      <!-- Carousel Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
-  </div>
 </div>
 
 
@@ -134,7 +135,7 @@
 <section class="py-5 bg-black">
     <div class="container">
         <div class="row g-4">
-            {% for i in office|slice:":8" %}
+            {% for i in office %}
             <div class="col-6 col-md-6 col-lg-3 ">
                 <img src="{{ i.image.url }}" alt="Portrait Photography" class="gallery-img img-fluid"
                     onclick="openModal(this)">
@@ -216,7 +217,7 @@
     <div class="container">
         <h2 class="section-title text-white border-bottom">Students Work</h2>
         <div class="row g-4">
-            {% for i in student|slice:":8" %}
+            {% for i in student %}
             <div class="col-6 col-md-6 col-lg-3">
                 <img src="{{ i.image.url }}" alt="Portrait Photography" class="gallery-img img-fluid"
                     onclick="openModal(this)">
@@ -306,5 +307,7 @@
         var modal = document.getElementById("imageModal");
         modal.style.display = "none";
     }
+
+
 </script>
 {%endblock%}
